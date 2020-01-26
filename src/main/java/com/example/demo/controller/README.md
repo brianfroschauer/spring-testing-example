@@ -10,3 +10,5 @@ In summary, for each request, a controller usually does the following steps:
 | Call the Business Logic | Having parsed the input, the controller must transform the input into the model expected by the business logic and pass it on to the business logic |
 | Serialize the Output | The controller takes the output of the business logic and serializes it into an HTTP response |
 | Translate Exceptions | If an exception occurs somewhere on the way, the controller should translate it into a meaningful error message and HTTP status for the user |
+
+Source: https://reflectoring.io/spring-boot-web-controller-test/
