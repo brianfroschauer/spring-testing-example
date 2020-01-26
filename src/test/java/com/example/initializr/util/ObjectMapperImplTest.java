@@ -1,4 +1,4 @@
-package com.example.initializr.util;
+package com.example.initializr.unit.util;
 
 import com.example.initializr.dto.UserDTO;
 import com.example.initializr.entity.User;
@@ -13,10 +13,10 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-public class ObjectMapperTest {
+public class ObjectMapperImplTest {
 
     @Autowired
-    private ObjectMapper objectMapper;
+    private ObjectMapperImpl objectMapperImpl;
 
     @Test
     @DisplayName("Given user, when map to user DTO, then return user DTO")
@@ -28,7 +28,7 @@ public class ObjectMapperTest {
         user.setUsername("username");
         user.setPassword("password");
 
-        final UserDTO userDTO = objectMapper.map(user, UserDTO.class);
+        final UserDTO userDTO = objectMapperImpl.map(user, UserDTO.class);
         assertNotNull(userDTO);
         assertEquals("firstName", userDTO.getFirstName());
         assertEquals("lastName", userDTO.getLastName());
@@ -38,7 +38,7 @@ public class ObjectMapperTest {
     @Test
     @DisplayName("Given user list, when map to user DTO, then return list of user DTO")
     public void givenUserList_whenMapToUserDTO_thenReturnUserListDTO() {
-        final List<UserDTO> users = objectMapper.map(Arrays.asList(new User(), new User()), UserDTO.class);
+        final List<UserDTO> users = objectMapperImpl.map(Arrays.asList(new User(), new User()), UserDTO.class);
         assertNotNull(users);
         assertEquals(2, users.size());
     }

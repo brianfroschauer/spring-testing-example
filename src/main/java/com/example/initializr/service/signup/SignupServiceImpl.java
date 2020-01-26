@@ -1,4 +1,4 @@
-package com.example.initializr.service.signup;
+package com.example.initializr.unit.service.signup;
 
 import com.example.initializr.entity.User;
 import com.example.initializr.exception.AlreadyExistsException;

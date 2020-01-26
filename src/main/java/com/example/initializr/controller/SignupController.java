@@ -5,6 +5,7 @@ import com.example.initializr.dto.UserDTO;
 import com.example.initializr.entity.User;
 import com.example.initializr.service.signup.SignupService;
 import com.example.initializr.util.ObjectMapper;
+import com.example.initializr.util.ObjectMapperImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,10 +21,9 @@ public class SignupController {
     private final SignupService signupService;
     private final ObjectMapper objectMapper;
 
-    public SignupController(SignupService signupService,
-                            ObjectMapper objectMapper) {
+    public SignupController(SignupService signupService) {
         this.signupService = signupService;
-        this.objectMapper = objectMapper;
+        this.objectMapper = new ObjectMapperImpl();
     }
 
     @PostMapping

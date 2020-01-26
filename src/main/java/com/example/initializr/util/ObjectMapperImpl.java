@@ -1,22 +1,30 @@
-package com.example.initializr.util;
+package com.example.initializr.unit.util;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
-public interface ObjectMapperImpl {
+@Component
+public class ObjectMapperImpl implements ObjectMapper {
 
-    /**
-     * Map the provided {@param source} object to {@param target} object.
-     *
-     * @param source list of objects to be mapped.
-     * @return the mapped entities.
-     */
-    <D, E> List<D> map(List<E> source, Class<D> target);
+    private final ModelMapper modelMapper;
 
-    /**
-     * Map a {@param source} object to {@param target} object.
-     *
-     * @param source object to be mapped.
-     * @return the mapped entity.
-     */
-    <D, E> D map(E source, Class<D> target);
+    public ObjectMapperImpl() {
+        modelMapper = new ModelMapper();
+    }
+
+    @Override
+    public <D, E> List<D> map(List<E> source, Class<D> target) {
+        return source
+                .stream()
+                .map(entity -> modelMapper.map(entity, target))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public <D, E> D map(E source, Class<D> target) {
+        return modelMapper.map(source, target);
+    }
 }

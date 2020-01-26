@@ -1,9 +1,9 @@
-package com.example.initializr.service;
+package com.example.initializr.unit.service;
 
 import com.example.initializr.entity.User;
 import com.example.initializr.exception.NotFoundException;
 import com.example.initializr.repository.UserRepository;
-import com.example.initializr.service.user.UserService;
+import com.example.initializr.unit.service.user.UserService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

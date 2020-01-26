@@ -1,9 +1,9 @@
-package com.example.initializr.service;
+package com.example.initializr.unit.service;
 
 import com.example.initializr.entity.User;
 import com.example.initializr.exception.AlreadyExistsException;
 import com.example.initializr.repository.UserRepository;
-import com.example.initializr.service.signup.SignupService;
+import com.example.initializr.unit.service.signup.SignupService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

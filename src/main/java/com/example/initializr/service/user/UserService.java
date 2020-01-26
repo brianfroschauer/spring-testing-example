@@ -1,4 +1,4 @@
-package com.example.initializr.service.user;
+package com.example.initializr.unit.service.user;
 
 import com.example.initializr.entity.User;
 

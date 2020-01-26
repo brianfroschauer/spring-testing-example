@@ -5,6 +5,7 @@ import com.example.initializr.dto.UserDTO;
 import com.example.initializr.entity.User;
 import com.example.initializr.service.user.UserService;
 import com.example.initializr.util.ObjectMapper;
+import com.example.initializr.util.ObjectMapperImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,9 +19,9 @@ public class UserController {
     private final UserService userService;
     private final ObjectMapper objectMapper;
 
-    public UserController(UserService userService, ObjectMapper objectMapper) {
+    public UserController(UserService userService) {
         this.userService = userService;
-        this.objectMapper = objectMapper;
+        this.objectMapper = new ObjectMapperImpl();
     }
 
     @GetMapping
