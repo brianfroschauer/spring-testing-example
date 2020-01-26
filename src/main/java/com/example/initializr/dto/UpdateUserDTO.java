@@ -14,9 +14,9 @@ public class UpdateUserDTO {
 
     @NotNull
     @Size(min = 2, max = 20)
-    private String lastName;
+    private String firstName;
 
     @NotNull
     @Size(min = 2, max = 20)
-    private String username;
+    private String lastName;
 }
