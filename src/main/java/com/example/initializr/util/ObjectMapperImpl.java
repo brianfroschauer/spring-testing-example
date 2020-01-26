@@ -1,4 +1,4 @@
-package com.example.initializr.unit.util;
+package com.example.initializr.util;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
