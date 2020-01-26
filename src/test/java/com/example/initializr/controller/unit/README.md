@@ -9,7 +9,6 @@ Would that work in our case? Let’s check which of the 6 responsibilities we ha
 | Responsibility | Covered in a Unit Test |
 | -------------- | ---------------------- |
 | Listen to HTTP Requests | No, because the unit test would not evaluate the @PostMapping annotation and similar annotations specifying the properties of a HTTP request. |
-| Listen to HTTP Requests | No, because the unit test would not evaluate the @PostMapping annotation and similar annotations specifying the properties of a HTTP request |
 | Deserialize Input | No, because annotations like @RequestParam and @PathVariable would not be evaluated. Instead we would provide the input as Java objects, effectively skipping deserialization from an HTTP request |
 | Validate Input | Not when depending on bean validation, because the @Valid annotation would not be evaluated |
 | Call the Business Logic | Yes, because we can verify if the mocked business logic has been called with the expected arguments |
