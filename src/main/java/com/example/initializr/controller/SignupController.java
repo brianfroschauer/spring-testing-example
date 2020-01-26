@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("signup")
 public class SignupController {
@@ -25,7 +27,7 @@ public class SignupController {
     }
 
     @PostMapping
-    public ResponseEntity<UserDTO> signup(@RequestBody SignupUserDTO signupUser) {
+    public ResponseEntity<UserDTO> signup(@RequestBody @Valid SignupUserDTO signupUser) {
         final User user = signupService.signup(objectMapper.map(signupUser, User.class));
         return ResponseEntity.ok(objectMapper.map(user, UserDTO.class));
     }

@@ -8,6 +8,7 @@ import com.example.initializr.util.ObjectMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -36,7 +37,7 @@ public class UserController {
 
     @PutMapping(value = "{id}")
     public ResponseEntity<UserDTO> update(@PathVariable Long id,
-                                          @RequestBody UpdateUserDTO updateUserDTO) {
+                                          @RequestBody @Valid UpdateUserDTO updateUserDTO) {
         final User user = userService.update(id, objectMapper.map(updateUserDTO, User.class));
         return ResponseEntity.ok(objectMapper.map(user, UserDTO.class));
     }
