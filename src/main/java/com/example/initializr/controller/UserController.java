@@ -30,20 +30,20 @@ public class UserController {
         return ResponseEntity.ok(objectMapper.map(users, UserDTO.class));
     }
 
-    @GetMapping(value = "{id}")
+    @GetMapping("{id}")
     public ResponseEntity<UserDTO> find(@PathVariable Long id) {
-        final User users = userService.find(id);
-        return ResponseEntity.ok(objectMapper.map(users, UserDTO.class));
+        final User user = userService.find(id);
+        return ResponseEntity.ok(objectMapper.map(user, UserDTO.class));
     }
 
-    @PutMapping(value = "{id}")
+    @PutMapping("{id}")
     public ResponseEntity<UserDTO> update(@PathVariable Long id,
                                           @RequestBody @Valid UpdateUserDTO updateUserDTO) {
         final User user = userService.update(id, objectMapper.map(updateUserDTO, User.class));
         return ResponseEntity.ok(objectMapper.map(user, UserDTO.class));
     }
 
-    @DeleteMapping(value = "{id}")
+    @DeleteMapping("{id}")
     public ResponseEntity<UserDTO> delete(@PathVariable Long id) {
         userService.delete(id);
         return ResponseEntity.noContent().build();
