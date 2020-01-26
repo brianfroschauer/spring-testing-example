@@ -1,4 +1,4 @@
-package com.example.initializr.unit.service.signup;
+package com.example.initializr.service.signup;
 
 import com.example.initializr.entity.User;
 
