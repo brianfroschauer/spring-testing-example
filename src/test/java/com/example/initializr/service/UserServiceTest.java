@@ -28,6 +28,11 @@ public class UserServiceTest {
     private UserService userService;
 
     @Test
+    public void contextLoads() {
+        assertNotNull(userService);
+    }
+
+    @Test
     @DisplayName("Given user list, when find all, then return users")
     public void givenUserList_whenFindAll_thenReturnUsers() {
         doReturn(Arrays.asList(new User(), new User()))
