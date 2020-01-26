@@ -16,3 +16,5 @@ Would that work in our case? Let’s check which of the 6 responsibilities we ha
 | Translate Exceptions | No. We could check if a certain exception was raised, but not that it was translated to a certain JSON response or HTTP status code |
 
 In summary, a simple unit test will not cover the HTTP layer.
+
+Source: https://reflectoring.io/spring-boot-web-controller-test/
