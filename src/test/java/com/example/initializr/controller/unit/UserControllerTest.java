@@ -1,4 +1,4 @@
-package com.example.initializr.unit.controller;
+package com.example.initializr.controller.unit;
 
 import org.springframework.boot.test.context.SpringBootTest;
 

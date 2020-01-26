@@ -1,4 +1,4 @@
-package com.example.initializr.unit.util;
+package com.example.initializr.util;
 
 import com.example.initializr.dto.UserDTO;
 import com.example.initializr.entity.User;

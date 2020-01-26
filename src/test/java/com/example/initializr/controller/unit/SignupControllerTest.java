@@ -1,9 +1,10 @@
-package com.example.initializr.unit.controller;
+package com.example.initializr.controller.unit;
 
+import com.example.initializr.controller.SignupController;
 import com.example.initializr.dto.SignupUserDTO;
 import com.example.initializr.dto.UserDTO;
 import com.example.initializr.entity.User;
-import com.example.initializr.unit.service.signup.SignupService;
+import com.example.initializr.service.signup.SignupService;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
