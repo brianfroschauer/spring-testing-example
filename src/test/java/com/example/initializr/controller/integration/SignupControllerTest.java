@@ -14,6 +14,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doReturn;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -31,6 +32,12 @@ public class SignupControllerTest {
 
     @MockBean
     private SignupService signupService;
+
+    @Test
+    public void contextLoads() {
+        assertNotNull(mockMvc);
+        assertNotNull(objectMapper);
+    }
 
     @Test
     @DisplayName("Given valid user, when signup, then return Ok response")

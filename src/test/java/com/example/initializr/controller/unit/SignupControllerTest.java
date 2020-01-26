@@ -16,6 +16,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
@@ -27,6 +28,11 @@ public class SignupControllerTest {
 
     @Autowired
     private SignupController signupController;
+
+    @Test
+    public void contextLoads() {
+        assertNotNull(signupController);
+    }
 
     @Test
     @DisplayName("Given valid user, when signup, then return Ok response")
